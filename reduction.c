@@ -111,11 +111,12 @@ char reduction3 () {
 char reduction4 () {
 	stateA = pop ();//pop state
 	// Verify next stack terminal "F"
-	grammar1 = pop ();
-	if(grammar1 != 'F') {
-		push (grammar1);
+	if(peek () != 'F') {
 		push (stateA);
 		return '0';
+		}
+	else {
+		pop ();
 		}
 	push ('T');
 	return 'T';
@@ -164,7 +165,7 @@ char reduction5 () {
 char reduction6 () {
 	stateA = pop ();//pop state
 	//Verify next stack terminal
-	if(pop () != 'A') {
+	if(peek () != 'A') {
 		push (stateA);
 		return '0';
 		}

@@ -17,7 +17,7 @@ void removeSpaces (char* source) {
 
 extern void processEvent (char ch);
 
-int main (int argc, char * argv[]) {
+int testMain (int argc, char * argv[]) {
 	char testval;
 	//r1
 	push (0);
@@ -72,7 +72,7 @@ int main (int argc, char * argv[]) {
 	}
 
 
-int exampleMain (int argc, char * argv[]) {
+int main (int argc, char * argv[]) {
 	char * secondArgument;
 	char ch;
 	secondArgument = *(argv + 1);  // notice no array here!
