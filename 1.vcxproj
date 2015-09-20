@@ -115,6 +115,7 @@
     <ClCompile Include="statemachine.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="mainProgram.h" />
     <ClInclude Include="reduction.h" />
     <ClInclude Include="stack.h" />
     <ClInclude Include="statemachine.h" />

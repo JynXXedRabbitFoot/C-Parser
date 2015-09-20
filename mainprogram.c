@@ -3,6 +3,12 @@
 #include "statemachine.h"
 #include "reduction.h"
 
+char * secondArgument;
+
+void decrementArgument () {
+	secondArgument--;
+	}
+
 //http://stackoverflow.com/questions/1726302/removing-spaces-from-a-string-in-c
 void removeSpaces (char* source) {
 	char* i = source;
@@ -73,7 +79,6 @@ int testMain (int argc, char * argv[]) {
 
 
 int main (int argc, char * argv[]) {
-	char * secondArgument;
 	char ch;
 	secondArgument = *(argv + 1);  // notice no array here!
 	if(argc < 2) {

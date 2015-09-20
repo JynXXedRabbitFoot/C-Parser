@@ -3,175 +3,143 @@
 
 #include "stack.h"
 
-char grammar1 = 'x';
-char stateA = 'x';
-char grammar2 = 'x';
-char stateB = 'x';
-char grammar3 = 'x';
-char stateC = 'x';
-
 //Reduce "E + T" to "E"
 char reduction1 () {
+	decrementArgument ();
 	//pop state
-	stateC = pop ();
+	pop ();
 	// Verify next stack terminal "T"
 	if(peek () != 'T') {
-		push (stateC);
-		return '0';
-		}
-	else {
-		grammar3 = pop ();
-		}
-	//pop state
-	stateB = pop ();
-	// Verify next stack terminal "+"
-	if(peek () != '+') {
-		push (stateB);
-		push (grammar3);
-		push (stateC);
-		return '0';
-		}
-	else {
-		grammar2 = pop ();
-		}
-	//pop state
-	stateA = pop ();
-	// Verify next stack terminal "E"	
-	if(peek () != 'E') {
-		push (stateA);
-		push (grammar2);
-		push (stateB);
-		push (grammar3);
-		push (stateC);
 		return '0';
 		}
 	else {
 		pop ();
 		}
-	push ('E');
+	//pop state
+	pop ();
+	// Verify next stack terminal "+"
+	if(peek () != '+') {
+		return '0';
+		}
+	else {
+		pop ();
+		}
+	//pop state
+	pop ();
+	// Verify next stack terminal "E"	
+	if(peek () != 'E') {
+		return '0';
+		}
+	else {
+		pop ();
+		}
 	return 'E';
 	}
+
 
 //Reduce "T" to "E"
 char reduction2 () {
+	decrementArgument ();
 	//pop state
-	stateA = pop ();
+	pop ();
 	// Verify next stack terminal "T"	
 	if(peek () != 'T') {
-		push (stateA);
 		return '0';
 		}
 	else {
 		pop ();
 		}
-	push ('E');
 	return 'E';
 	}
 
+
 //Reduce "T * F" to "T"
 char reduction3 () {
-	stateC = pop ();//pop state
+	decrementArgument ();
+	pop ();//pop state
 	// Verify next stack terminal "T"	
 	if(peek () != 'F') {
-		push (stateC);
-		return '0';
-		}
-	else {
-		grammar3 = pop ();
-		}
-	stateB = pop ();//pop state
-	// Verify next stack terminal "*"
-	if(peek () != '*') {
-		push (stateB);
-		push (grammar3);
-		push (stateC);
-		return '0';
-		}
-	else {
-		grammar2 = pop ();
-		}
-	stateA = pop ();//pop state
-	// Verify next stack terminal "F"
-	if(peek () != 'T') {
-		push (stateA);
-		push (grammar2);
-		push (stateB);
-		push (grammar3);
-		push (stateC);
 		return '0';
 		}
 	else {
 		pop ();
 		}
-	push ('T');
+	pop ();//pop state
+	// Verify next stack terminal "*"
+	if(peek () != '*') {
+		return '0';
+		}
+	else {
+		pop ();
+		}
+	pop ();//pop state
+	// Verify next stack terminal "F"
+	if(peek () != 'T') {
+		return '0';
+		}
+	else {
+		pop ();
+		}
 	return 'T';
 	}
+
 
 //Reduce "F" to "T"
 char reduction4 () {
-	stateA = pop ();//pop state
+	decrementArgument ();
+	pop ();//pop state
 	// Verify next stack terminal "F"
 	if(peek () != 'F') {
-		push (stateA);
 		return '0';
 		}
 	else {
 		pop ();
 		}
-	push ('T');
 	return 'T';
 	}
 
+
 //Reduce "( E )" to "F"
 char reduction5 () {
-	stateC = pop ();//pop state
+	decrementArgument ();
+	pop ();//pop state
 	// Verify next stack terminal ")"
 	if(peek () != ')') {
-		push (stateC);
-		return '0';
-		}
-	else {
-		grammar3 = pop ();
-		}
-	stateB = pop ();//pop state
-	// Verify next stack terminal "E"
-	if(peek () != 'E') {
-		push (stateB);
-		push (grammar3);
-		push (stateC);
-		return '0';
-		}
-	else {
-		grammar2 = pop ();
-		}
-	stateA = pop ();//pop state
-	// Verify next stack terminal "("
-	if(peek () != '(') {
-		push (stateA);
-		push (grammar2);
-		push (stateB);
-		push (grammar3);
-		push (stateC);
 		return '0';
 		}
 	else {
 		pop ();
 		}
-	push ('F');
+	pop ();//pop state
+	// Verify next stack terminal "E"
+	if(peek () != 'E') {
+		return '0';
+		}
+	else {
+		pop ();
+		}
+	pop ();//pop state
+	// Verify next stack terminal "("
+	if(peek () != '(') {
+		return '0';
+		}
+	else {
+		pop ();
+		}
 	return 'F';
 	}
 
+
 //Reduce "id (A)" to "F"
 char reduction6 () {
-	stateA = pop ();//pop state
+	decrementArgument ();
+	pop ();//pop state
 	//Verify next stack terminal
 	if(peek () != 'A') {
-		push (stateA);
 		return '0';
 		}
 	else {
 		pop ();
 		}
-	push ('F');
 	return 'F';
 	}
