@@ -6,49 +6,53 @@
 char currentState = -1;
 
 void processEvent (char event) {
-
+	int ProcessedCorrectly = 0;
 	currentState = peek (); /* remember, reductions do the pops! */
 
 	printf ("Processing event: %c for state: %c \n", event, currentState);
 
 	switch(currentState) {
 		case STATE0:
-			state0 (event);
+			ProcessedCorrectly = state0 (event);
 			break;
 		case STATE1:
-			state1 (event);
+			ProcessedCorrectly = state1 (event);
 			break;
 		case STATE2:
-			state2 (event);
+			ProcessedCorrectly = state2 (event);
 			break;
 		case STATE3:
-			state3 (event);
+			ProcessedCorrectly = state3 (event);
 			break;
 		case STATE4:
-			state4 (event);
+			ProcessedCorrectly = state4 (event);
 			break;
 		case STATE5:
-			state5 (event);
+			ProcessedCorrectly = state5 (event);
 			break;
 		case STATE6:
-			state6 (event);
+			ProcessedCorrectly = state6 (event);
 			break;
 		case STATE7:
-			state7 (event);
+			ProcessedCorrectly = state7 (event);
 			break;
 		case STATE8:
-			state8 (event);
+			ProcessedCorrectly = state8 (event);
 			break;
 		case STATE9:
-			state9 (event);
+			ProcessedCorrectly = state9 (event);
 			break;
 		case STATEA:
-			state10 (event);
+			ProcessedCorrectly = state10 (event);
 			break;
 		case STATEB:
-			state11 (event);
+			ProcessedCorrectly = state11 (event);
 			break;
 		default:
 			printf ("Unknown state %d for event  %c \n", currentState, event);
+		}
+	if(ProcessedCorrectly == 1) {
+		printf ("The Grammar Failed The Syntax Machine");
+		exit (0);
 		}
 	}

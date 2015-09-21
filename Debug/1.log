@@ -1,8 +1,9 @@
-﻿Build started 9/21/2015 9:42:01 AM.
+﻿Build started 9/21/2015 4:08:28 PM.
      1>Project "C:\Users\SP-Root\Documents\Visual Studio programs\365hw1\1.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TC /analyze- /errorReport:prompt mainprogram.c stack.c reduction.c state0.c state1.c state10.c state11.c state2.c state3.c state4.c state5.c state6.c state7.c state8.c state9.c statemachine.c
          statemachine.c
+     1>statemachine.c(56): warning C4013: 'exit' undefined; assuming extern returning int
          state9.c
          state8.c
          state7.c
@@ -41,4 +42,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:00.76
+Time Elapsed 00:00:01.03

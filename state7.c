@@ -23,7 +23,7 @@ int state7 (char event) {
 
 		default:
 			printf ("state7: unexpected event\n");
-			break;
+			return 1;
 		}
 	return 0;
 	}

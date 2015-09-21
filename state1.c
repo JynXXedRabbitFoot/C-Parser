@@ -13,12 +13,12 @@ int state1 (char event) {
 			break;
 
 		case '$':
-			//ACCEPT???????????
+			printf ("The Grammar Passed All Checks, And Was Accepted!\n");
 			break;
 
 		default:
 			printf ("state1: unexpected event\n");
-			break;
+			return 1;
 		}
 	return 0;
 	}

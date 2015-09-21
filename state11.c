@@ -34,7 +34,7 @@ int state11 (char event) {
 
 		default:
 			printf ("state10: unexpected event\n");
-			break;
+			return 1;
 		}
 	return 0;
 	}

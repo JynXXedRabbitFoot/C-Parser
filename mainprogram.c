@@ -98,10 +98,7 @@ int main (int argc, char * argv[]) {
 		secondArgument++;
 		ch = *secondArgument;
 		}
-
-	while(!empty ())
-		printf ("%c", pop ());
-	printf ("\n");
-
+	processEvent ('$');
+	printf ("Finished Processing");
 	return 0;
 	}

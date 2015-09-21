@@ -28,7 +28,7 @@ int state6 (char event) {
 
 		default:
 			printf ("state6: unexpected event\n");
-			break;
+			return 1;
 		}
 	return 0;
 	}
