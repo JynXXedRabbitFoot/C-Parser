@@ -1,71 +1,39 @@
+#include "stack.h"
 #include "statemachine.h"
+#include "reduction.h"
 #include <stdio.h>
 
-// returns the new state
-int state2 (char event) {
-	int newState = 0;
-	char reductionResult;
 
+int state2 (char event) {
+	char redValue;
 	printf ("state2 proccessing %c event\n", event);
 	switch(event) {
 		case '+':
-			reductionResult = reduction2 ();
-			newState = peek ();
-			push (reductionResult);
-			switch(newState) {
-				case '0':
-					push ('1');
-					newState = STATE1;
-					break;
-				case '4':
-					push ('8');
-					newState = STATE8;
-					break;
-				}
+			redValue = reduction2 ();
+			processEvent (redValue);
+			processEvent (event);
 			break;
 
 		case '*':
 			push (event);
 			push ('7');
-			newState = STATE7;
 			break;
 
 		case ')':
-			reductionResult = reduction2 ();
-			newState = peek ();
-			push (reductionResult);
-			switch(newState) {
-				case '0':
-					push ('1');
-					newState = STATE1;
-					break;
-				case '4':
-					push ('8');
-					newState = STATE8;
-					break;
-				}
+			redValue = reduction2 ();
+			processEvent (redValue);
+			processEvent (event);
 			break;
 
 		case '$':
-			reductionResult = reduction2 ();
-			newState = peek ();
-			push (reductionResult);
-			switch(newState) {
-				case '0':
-					push ('1');
-					newState = STATE1;
-					break;
-				case '4':
-					push ('8');
-					newState = STATE8;
-					break;
-				}
+			redValue = reduction2 ();
+			processEvent (redValue);
+			processEvent (event);
 			break;
 
 		default:
 			printf ("state2: unexpected event\n");
-			newState = STATE0;
-			break;
+			return 1;
 		}
-	return newState;
+	return 0;
 	}

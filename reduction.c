@@ -5,7 +5,6 @@
 
 //Reduce "E + T" to "E"
 char reduction1 () {
-	decrementArgument ();
 	//pop state
 	pop ();
 	// Verify next stack terminal "T"
@@ -39,7 +38,6 @@ char reduction1 () {
 
 //Reduce "T" to "E"
 char reduction2 () {
-	decrementArgument ();
 	//pop state
 	pop ();
 	// Verify next stack terminal "T"	
@@ -55,7 +53,6 @@ char reduction2 () {
 
 //Reduce "T * F" to "T"
 char reduction3 () {
-	decrementArgument ();
 	pop ();//pop state
 	// Verify next stack terminal "T"	
 	if(peek () != 'F') {
@@ -86,7 +83,6 @@ char reduction3 () {
 
 //Reduce "F" to "T"
 char reduction4 () {
-	decrementArgument ();
 	pop ();//pop state
 	// Verify next stack terminal "F"
 	if(peek () != 'F') {
@@ -101,7 +97,6 @@ char reduction4 () {
 
 //Reduce "( E )" to "F"
 char reduction5 () {
-	decrementArgument ();
 	pop ();//pop state
 	// Verify next stack terminal ")"
 	if(peek () != ')') {
@@ -132,7 +127,6 @@ char reduction5 () {
 
 //Reduce "id (A)" to "F"
 char reduction6 () {
-	decrementArgument ();
 	pop ();//pop state
 	//Verify next stack terminal
 	if(peek () != 'A') {

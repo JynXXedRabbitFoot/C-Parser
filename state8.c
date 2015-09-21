@@ -1,54 +1,24 @@
+#include "stack.h"
 #include "statemachine.h"
 #include <stdio.h>
 
-// returns the new state
-int state8(char event)
-{ 
-  int newState = 0;
+int state8 (char event) {
 
-  printf("state8 proccessing %c event\n", event);
-  switch (event)
-  {
-    case 'i':
-      newState = -1; 
-      break;
+	printf ("state8 proccessing %c event\n", event);
+	switch(event) {
+		case '+':
+			push (event);
+			push ('6');
+			break;
 
-    case '+':
-      newState = -1; 
-      break;
+		case ')':
+			push (event);
+			push ('b');
+			break;
 
-    case '*':
-      newState = -1; 
-      break;
-
-    case '(':
-      newState = -1; 
-      break;
-
-    case ')':
-      newState = -1; 
-      break;
-
-    case '$':
-      newState = -1; 
-      break;
-
-    case 'E':
-      newState = -1; 
-      break;
-
-    case 'T':
-      newState = -1; 
-      break;
-
-    case 'F':
-      newState = -1; 
-      break;
-
-    default:
-      printf("state8: unexpected event\n");
-      newState = STATE0;
-      break;
-   }
-   return newState;    
-}
+		default:
+			printf ("state8: unexpected event\n");
+			return 1;
+		}
+	return 0;
+	}

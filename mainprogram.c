@@ -9,7 +9,7 @@ void decrementArgument () {
 	secondArgument--;
 	}
 
-//http://stackoverflow.com/questions/1726302/removing-spaces-from-a-string-in-c
+// yeps
 void removeSpaces (char* source) {
 	char* i = source;
 	char* j = source;
@@ -23,7 +23,7 @@ void removeSpaces (char* source) {
 
 extern void processEvent (char ch);
 
-int testMain (int argc, char * argv[]) {
+void testMain (int argc, char * argv[]) {
 	char testval;
 	//r1
 	push (0);
@@ -98,10 +98,7 @@ int main (int argc, char * argv[]) {
 		secondArgument++;
 		ch = *secondArgument;
 		}
-
-	while(!empty ())
-		printf ("%c", pop ());
-	printf ("\n");
-
+	processEvent ('$');
+	printf ("Finished Processing");
 	return 0;
 	}
