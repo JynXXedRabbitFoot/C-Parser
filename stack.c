@@ -9,12 +9,8 @@
 
 #define EMPTYSTACK -1;
 #define MAXSTACK  100;
-//int top = EMPTYSTACK;
-//char items[MAXSTACK];
 char *items;
 int charInit = 0;
-//items = malloc (sizeof (char) * 100);
-//char * counter = items;
 
 char peek () {
 	return *items;
@@ -36,11 +32,9 @@ char pop () {
 
 int full () {
 	return 0;
-	//top + 1 == MAXSTACK;
 	}
 
 int empty () {
 	return 0;
-	//top == EMPTYSTACK;
 	}
 #endif
