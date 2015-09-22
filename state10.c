@@ -2,36 +2,33 @@
 #include "statemachine.h"
 #include "reduction.h"
 #include <stdio.h>
-
+//Dan Kruse
+//State 10 for the state machine.
 int state10 (char event) {
 	char redValue;
-
 	printf ("state1 proccessing %c event\n", event);
+
 	switch(event) {
 		case '+':
 			redValue = reduction3 ();
 			processEvent (redValue);
 			processEvent (event);
 			break;
-
 		case '*':
 			redValue = reduction3 ();
 			processEvent (redValue);
 			processEvent (event);
 			break;
-
 		case ')':
 			redValue = reduction3 ();
 			processEvent (redValue);
 			processEvent (event);
 			break;
-
 		case '$':
 			redValue = reduction3 ();
 			processEvent (redValue);
 			processEvent (event);
 			break;
-
 		default:
 			printf ("state10: unexpected event\n");
 			return 1;

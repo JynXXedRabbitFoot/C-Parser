@@ -1,13 +1,16 @@
 #include "statemachine.h"
 #include "stack.h"
 #include <stdio.h>
-
+#include <stdlib.h>
+//Dan Kruse
+//State machine.
 
 char currentState = -1;
 
+// Processes an event which drives a change in state.
 void processEvent (char event) {
 	int ProcessedCorrectly = 0;
-	currentState = peek (); /* remember, reductions do the pops! */
+	currentState = peek ();
 
 	printf ("Processing event: %c for state: %c \n", event, currentState);
 
@@ -50,6 +53,7 @@ void processEvent (char event) {
 			break;
 		default:
 			printf ("Unknown state %d for event  %c \n", currentState, event);
+			ProcessedCorrectly = 1;
 		}
 	if(ProcessedCorrectly == 1) {
 		printf ("The Grammar Failed The Syntax Machine");

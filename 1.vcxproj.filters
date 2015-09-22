@@ -74,8 +74,5 @@
     <ClInclude Include="reduction.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="mainProgram.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>

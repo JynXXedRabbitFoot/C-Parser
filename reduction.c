@@ -1,36 +1,32 @@
-/* stubs file for reductions */
-/* replace this with your header */
-
+//Dan Kruse
+//Perform Stack Reductions
 #include "stack.h"
 
 //Reduce "E + T" to "E"
 char reduction1 () {
-	//pop state
-	pop ();
+	pop ();//pop state
 	// Verify next stack terminal "T"
 	if(peek () != 'T') {
-		return '0';
+		return '1';
 		}
 	else {
-		pop ();
+		pop (); //pop terminal
 		}
-	//pop state
-	pop ();
+	pop ();	//pop state
 	// Verify next stack terminal "+"
 	if(peek () != '+') {
-		return '0';
+		return '1';
 		}
 	else {
-		pop ();
+		pop ();//pop terminal
 		}
-	//pop state
-	pop ();
+	pop ();	//pop state
 	// Verify next stack terminal "E"	
 	if(peek () != 'E') {
-		return '0';
+		return '1';
 		}
 	else {
-		pop ();
+		pop ();//pop terminal
 		}
 	return 'E';
 	}
@@ -38,11 +34,10 @@ char reduction1 () {
 
 //Reduce "T" to "E"
 char reduction2 () {
-	//pop state
-	pop ();
+	pop ();//pop state
 	// Verify next stack terminal "T"	
 	if(peek () != 'T') {
-		return '0';
+		return '1';
 		}
 	else {
 		pop ();
@@ -56,7 +51,7 @@ char reduction3 () {
 	pop ();//pop state
 	// Verify next stack terminal "T"	
 	if(peek () != 'F') {
-		return '0';
+		return '1';
 		}
 	else {
 		pop ();
@@ -64,7 +59,7 @@ char reduction3 () {
 	pop ();//pop state
 	// Verify next stack terminal "*"
 	if(peek () != '*') {
-		return '0';
+		return '1';
 		}
 	else {
 		pop ();
@@ -72,7 +67,7 @@ char reduction3 () {
 	pop ();//pop state
 	// Verify next stack terminal "F"
 	if(peek () != 'T') {
-		return '0';
+		return '1';
 		}
 	else {
 		pop ();
@@ -86,7 +81,7 @@ char reduction4 () {
 	pop ();//pop state
 	// Verify next stack terminal "F"
 	if(peek () != 'F') {
-		return '0';
+		return '1';
 		}
 	else {
 		pop ();
@@ -100,7 +95,7 @@ char reduction5 () {
 	pop ();//pop state
 	// Verify next stack terminal ")"
 	if(peek () != ')') {
-		return '0';
+		return '1';
 		}
 	else {
 		pop ();
@@ -108,7 +103,7 @@ char reduction5 () {
 	pop ();//pop state
 	// Verify next stack terminal "E"
 	if(peek () != 'E') {
-		return '0';
+		return '1';
 		}
 	else {
 		pop ();
@@ -116,7 +111,7 @@ char reduction5 () {
 	pop ();//pop state
 	// Verify next stack terminal "("
 	if(peek () != '(') {
-		return '0';
+		return '1';
 		}
 	else {
 		pop ();
@@ -130,7 +125,7 @@ char reduction6 () {
 	pop ();//pop state
 	//Verify next stack terminal
 	if(peek () != 'A') {
-		return '0';
+		return '1';
 		}
 	else {
 		pop ();

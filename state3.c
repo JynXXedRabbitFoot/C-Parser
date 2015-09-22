@@ -2,7 +2,8 @@
 #include "statemachine.h"
 #include "reduction.h"
 #include <stdio.h>
-
+//Dan Kruse
+//State 3 for the state machine.
 int state3 (char event) {
 	char redValue;
 	printf ("state3 proccessing %c event\n", event);

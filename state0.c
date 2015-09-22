@@ -1,7 +1,8 @@
 #include "statemachine.h"
 #include "stack.h"
 #include <stdio.h>
-
+//Dan Kruse
+//State 0 for the state machine.
 int state0 (char event) {
 
 	printf ("state0 proccessing %c event\n", event);
