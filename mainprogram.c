@@ -46,7 +46,7 @@ int main (int argc, char * argv[]) {
 		}
 	//Tokens complete, push end Char
 	processEvent (DOLLAR);
-	printf ("Finished Processing");
+	printf ("Finished Processing\n");
 	return 0;
 	}
 //reduction tests

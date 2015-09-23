@@ -7,11 +7,11 @@ int state8 (char event) {
 
 	printf ("state8 proccessing %c event\n", event);
 	switch(event) {
-		case '+':
+		case PLUS:
 			push (event);
 			push ('6');
 			break;
-		case ')':
+		case RIGHT:
 			push (event);
 			push ('b');
 			break;

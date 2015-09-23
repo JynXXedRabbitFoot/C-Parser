@@ -5,28 +5,23 @@
 //Dan Kruse
 //State 0 for the state machine.
 int state5 (char event) {
-	char redValue;
 	printf ("state5 proccessing %c event\n", event);
 
 	switch(event) {
-		case '+':
-			redValue = reduction6 ();
-			processEvent (redValue);
+		case PLUS:
+			processEvent (reduction6 ());
 			processEvent (event);
 			break;
-		case '*':
-			redValue = reduction6 ();
-			processEvent (redValue);
+		case MULT:
+			processEvent (reduction6 ());
 			processEvent (event);
 			break;
-		case ')':
-			redValue = reduction6 ();
-			processEvent (redValue);
+		case RIGHT:
+			processEvent (reduction6 ());
 			processEvent (event);
 			break;
-		case '$':
-			redValue = reduction6 ();
-			processEvent (redValue);
+		case DOLLAR:
+			processEvent (reduction6 ());
 			processEvent (event);
 			break;
 		default:

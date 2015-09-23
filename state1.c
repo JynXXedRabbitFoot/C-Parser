@@ -7,11 +7,11 @@ int state1 (char event) {
 
 	printf ("state1 proccessing %c event\n", event);
 	switch(event) {
-		case '+':
+		case PLUS:
 			push (event);
 			push ('6');
 			break;
-		case '$':
+		case DOLLAR:
 			printf ("The Grammar Passed All Checks, And Was Accepted!\n");
 			break;
 		default:

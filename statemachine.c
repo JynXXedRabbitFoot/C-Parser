@@ -56,7 +56,7 @@ void processEvent (char event) {
 			ProcessedCorrectly = 1;
 		}
 	if(ProcessedCorrectly == 1) {
-		printf ("The Grammar Failed The Syntax Machine");
+		printf ("The Grammar Failed The Syntax Machine\n");
 		exit (0);
 		}
 	}

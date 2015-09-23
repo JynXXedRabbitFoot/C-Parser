@@ -1,6 +1,7 @@
 //Dan Kruse
 //Perform Stack Reductions
 #include "stack.h"
+#include "statemachine.h"
 
 //Reduce "E + T" to "E"
 char reduction1 () {
@@ -14,7 +15,7 @@ char reduction1 () {
 		}
 	pop ();	//pop state
 	// Verify next stack terminal "+"
-	if(peek () != '+') {
+	if(peek () != PLUS) {
 		return '1';
 		}
 	else {
@@ -58,7 +59,7 @@ char reduction3 () {
 		}
 	pop ();//pop state
 	// Verify next stack terminal "*"
-	if(peek () != '*') {
+	if(peek () != MULT) {
 		return '1';
 		}
 	else {
@@ -94,7 +95,7 @@ char reduction4 () {
 char reduction5 () {
 	pop ();//pop state
 	// Verify next stack terminal ")"
-	if(peek () != ')') {
+	if(peek () != RIGHT) {
 		return '1';
 		}
 	else {
@@ -110,7 +111,7 @@ char reduction5 () {
 		}
 	pop ();//pop state
 	// Verify next stack terminal "("
-	if(peek () != '(') {
+	if(peek () != LEFT) {
 		return '1';
 		}
 	else {
